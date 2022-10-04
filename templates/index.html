@@ -1,0 +1,45 @@
+<!-- 
+
+Step 2 - basic html formatting for webpage such as title, color, placeholders, background color.
+
+-->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Heart Disease Percent</title>
+  
+</head>
+
+<body style="background: rgb(255, 255, 255);">
+ <div class="login">
+	<h1 style="color:rgb(46, 29, 235);">Heart Disease Prediction Model using Linear Regression</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="percent biking" placeholder="% of Population that Bikes" required="required" /><br>
+        <input type="text" name="percent smoking" placeholder="% of Population that Smokes" required="required" /><p>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Get Prediction of population with Heart Disease</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4 style="color:rgb(0, 0, 0);">
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
+
+
+
+
